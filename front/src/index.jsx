@@ -9,6 +9,7 @@ dayjs.locale("ja");
 
 const App = () => (
   <div>
+    <h1>Googleカレンダーっぽいカレンダー</h1>
     <CalendarBoard />
   </div>
 );
