@@ -2,16 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom";
 import dayjs from "dayjs";
 import "dayjs/locale/ja";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 
-import CalendarBoard from "./components/CalendarBoard";
+import rootReducer from "./redux/rootReducer";
+import CalendarBoard from "./components/CalendarBoard/container";
 
 dayjs.locale("ja");
 
+const store = createStore(rootReducer);
+
 const App = () => (
-  <div>
+  <Provider store={store}>
     <h1>Googleカレンダーっぽいカレンダー</h1>
     <CalendarBoard />
-  </div>
+  </Provider>
 );
 
 ReactDOM.render(<App />, document.getElementById("root"));
