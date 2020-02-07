@@ -7,6 +7,7 @@ import { createStore } from "redux";
 
 import rootReducer from "./redux/rootReducer";
 import CalendarBoard from "./components/CalendarBoard/container";
+import Navigation from "./components/Navigation/container";
 
 dayjs.locale("ja");
 
@@ -14,7 +15,7 @@ const store = createStore(rootReducer);
 
 const App = () => (
   <Provider store={store}>
-    <h1>Googleカレンダーっぽいカレンダー</h1>
+    <Navigation />
     <CalendarBoard />
   </Provider>
 );
